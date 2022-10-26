@@ -1,0 +1,90 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-container{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  position: relative;
+  width: 1200px;
+  height: 800px;
+  background-color: aquamarine;
+}
+
+.description{
+  position: absolute;
+  z-index: 998;
+  top: 0;
+  right: 0;
+  text-align: right;
+  width: 100%;
+  height: 100px;
+}
+
+.box-img{
+  width: 100%;
+  height: 600px;
+  background-color: brown;
+}
+
+.box-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.box-img img.active{
+  display: block;
+}
+
+.carousell{
+  width: 100%;
+  height: 200px;
+  background-color: cadetblue;
+  display: flex;
+}
+
+.carousell img{
+  width: calc(100% / 5);
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.carousell img.active{
+  opacity: 1;
+  border: 1px solid white;
+}
+
+.buttons{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+  bottom: 90px;
+  left: 0;
+}
+
+.back, .next{
+  position: relative;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+  background-color: crimson;
+}
+
+.back:hover, .next:hover{
+  color: rgb(36, 191, 238);
+}
