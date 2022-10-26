@@ -61,7 +61,7 @@ const back = document.querySelector('.back');
 const next = document.querySelector('.next');
 
 const numImg = 5;
-let counterImg = '';
+let counterImg = 0;
 
 let boxImgHtml = '';
 let carouselHtml = '';
@@ -70,7 +70,38 @@ let carouselHtml = '';
 
 for(let img of gallery){
   boxImgHtml = `<img src="${img.photo}" class="item" alt="${img.photo}">`; 
-  console.log(img.photo);
-}
 
-boxImg.innerHTML += boxImgHtml;
+  carouselHtml = `<img src="${img.photo}" class="item-carousel" alt="${img.photo}">`
+
+  boxImg.innerHTML += boxImgHtml;
+  carousel.innerHTML += carouselHtml;
+};
+
+const listImg = document.querySelector('.item');
+const listImgCar = document.querySelector('.item-carousel');
+
+listImg[counterImg].classList.add('active');
+listImgCar[counterImg].classList.add('active');
+
+back.addEventListener('click', function(){
+  nextBack(false);
+})
+next.addEventListener('click', function(){
+  nextBack(true);
+})
+
+
+function nextBack (isNext){
+  listImg[counterImg].classList.remove('active');
+  listImgCar[counterImg].classList.remove('active');
+
+  if(isNext){
+    counterImg--;
+    if(counterImg < 0) counterImg = numImg -1;
+  }else{
+    counterImg++
+    if(counterImg === numImg) counterImg = 0;
+  }
+  listImg[counterImg].classList.add('active');
+  listImgCar[counterImg].classList.add('active');
+}
