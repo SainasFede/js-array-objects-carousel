@@ -69,7 +69,7 @@ let carouselHtml = '';
 
 
 for(let img of gallery){
-  `<img src="${img.photo}" class="item" alt="${img.photo}">`;
+  boxImgHtml = `<img src="${img.photo}" class="item" alt="${img.photo}">`; 
   console.log(img.photo);
 }
 
